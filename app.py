@@ -3,7 +3,7 @@ import pandas as pd
 from surprise import Dataset, Reader, SVD
 
 # Add an image at the top
-st.image("movie.jpg", caption="Movie Recommender System", use_column_width=True)
+st.image("https://pin.it/79BgjfpR5", caption="Movie Recommender System", use_column_width=True)
 
 # Load your data
 links = pd.read_csv('./content/links.csv')
