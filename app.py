@@ -2,11 +2,14 @@ import streamlit as st
 import pandas as pd
 from surprise import Dataset, Reader, SVD
 
+# Add an image at the top
+st.image("movie.jpg", caption="Movie Recommender System", use_column_width=True)
+
 # Load your data
-links = pd.read_csv('./content/links.csv')
-ratings = pd.read_csv('./content/ratings.csv')
-movies = pd.read_csv('./content/movies.csv')
-tags = pd.read_csv('./content/tags.csv')
+links = pd.read_csv('/content/links.csv')
+ratings = pd.read_csv('/content/ratings.csv')
+movies = pd.read_csv('/content/movies.csv')
+tags = pd.read_csv('/content/tags.csv')
 
 # Merge data
 data1 = pd.merge(links, ratings, on='movieId', how="outer")
