@@ -3,25 +3,25 @@ import pandas as pd
 from surprise import Dataset, Reader, SVD
 
 # Load your data
-links = pd.read_csv('./content/links.csv')
-ratings = pd.read_csv('./content/ratings.csv')
-movies = pd.read_csv('./content/movies.csv')
-tags = pd.read_csv('./content/tags.csv')
+links = pd.read_csv('/content/links.csv')
+ratings = pd.read_csv('/content/ratings.csv')
+movies = pd.read_csv('/content/movies.csv')
+tags = pd.read_csv('/content/tags.csv')
 
 # Merge data
 data1 = pd.merge(links, ratings, on='movieId', how="outer")
 data2 = pd.merge(movies, tags, on='movieId', how="outer")
 data = pd.merge(data1, data2, on='movieId', how="outer")
 
-# Ensure proper data types
-data['movieId'] = data['movieId'].astype(int)
-data['userId_x'] = data['userId_x'].astype(int)
-data['rating'] = data['rating'].astype(float)
+# Ensure proper data types and handle NaNs
+data['userId_x'] = data['userId_x'].fillna(-1).astype(int)  # Fill NaNs with a placeholder and convert to int
+data['movieId'] = data['movieId'].fillna(-1).astype(int)
+data['rating'] = data['rating'].fillna(0).astype(float)
 data['timestamp_x'] = pd.to_datetime(data['timestamp_x'], errors='coerce')
-data['title'] = data['title'].astype(str)
-data['genres'] = data['genres'].astype(str)
-data['userId_y'] = data['userId_y'].astype(int)
-data['tag'] = data['tag'].astype(str)
+data['title'] = data['title'].fillna('Unknown').astype(str)
+data['genres'] = data['genres'].fillna('Unknown').astype(str)
+data['userId_y'] = data['userId_y'].fillna(-1).astype(int)
+data['tag'] = data['tag'].fillna('Unknown').astype(str)
 data['timestamp_y'] = pd.to_datetime(data['timestamp_y'], errors='coerce')
 
 # Prepare the data for Surprise
