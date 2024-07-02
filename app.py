@@ -2,8 +2,9 @@ import streamlit as st
 import pandas as pd
 from surprise import Dataset, Reader, SVD
 
-# Add an image at the top
-st.image("https://pin.it/79BgjfpR5", caption="Movie Recommender System", use_column_width=True)
+# Add an image at the top from a URL
+image_url = "https://pin.it/79BgjfpR5"
+st.image(image_url, caption="Movie Recommender System", use_column_width=True)
 
 # Load your data
 links = pd.read_csv('./content/links.csv')
