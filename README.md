@@ -1,19 +1,6 @@
 **RECOMMENDER SYSTEM FOR MOVIELENS DATASET**
 =======
 
-Summary
-=======
-
-This dataset (ml-latest-small) describes 5-star rating and free-text tagging activity from [MovieLens](http://movielens.org), a movie recommendation service. It contains 100836 ratings and 3683 tag applications across 9742 movies. These data were created by 610 users between March 29, 1996 and September 24, 2018. This dataset was generated on September 26, 2018.
-
-Users were selected at random for inclusion. All selected users had rated at least 20 movies. No demographic information is included. Each user is represented by an id, and no other information is provided.
-
-The data are contained in the files `links.csv`, `movies.csv`, `ratings.csv` and `tags.csv`. More details about the contents and use of all these files follows.
-
-This is a *development* dataset. As such, it may change over time and is not an appropriate dataset for shared research results. See available *benchmark* datasets if that is your intent.
-
-This and other GroupLens data sets are publicly available for download at <http://grouplens.org/datasets/>.
-
 PHASE 4:GROUP 12 MEMBERS:
 =============
 
@@ -70,28 +57,45 @@ User Engagement: Monitor user engagement metrics, such as click-through rates on
 
 Content and Use of Files
 ========================
-movieId: Unique identifier for each movie in the dataset.
+1. Introduction
+   - Objectives and overview.
+2. Importing Libraries
+   - Essential Python libraries
+3. Data Loading and Preprocessing
+   - Summary: Loaded and cleaned MovieLens datasets.
+   - Findings: Prepared data for analysis.
+4. Exploratory Data Analysis (EDA)
+   - Summary: Performed statistics and visualizations.
+   - Findings: Key patterns in user ratings and popular movies.
+5. Collaborative Filtering
+   - Summary:Implemented KNN and SVD.
+   - Findings: SVD showed superior performance.
+6.Content-Based Filterin
+   - Summary: Used movie metadata with TF-IDF and cosine similarity.
+   - Findings:Recommended similar content effectively.
+7.Dimensionality Reduction
+   - Summary: Applied SVD.
+   - Findings: Enhanced efficiency and performance.
+8. Hybrid Recommendations
+   - Summary:Combined methods for better accuracy.
+   - Findings: Hybrid approach was most effective.
+9. Conclusions
+   - Summary: Summarized techniques and effectiveness.
+   - Findings: Hybrid method performed best.
+10. References
+    - Sources and datasets.
+     
+RESULTS
+========================
 
-imdbId: IMDb identifier for each movie.
+- Collaborative Filtering: Provides personalized recommendations based on similar users' ratings.
+- Content-Based Filtering:Suggests movies with similar content.
+- Hybrid Recommendations:Combines both methods for more accurate suggestions.
+   
+CONCLUSION
+========================
 
-tmdbId: The Movie Database (TMDb) identifier for each movie.
-
-userId_x: Identifier for users who have rated movies.
-
-rating: Rating given by a user to a movie (typically on a scale).
-
-timestamp_x: Timestamp when a user rated a movie.
-
-title: Title of the movie.
-
-genres: Genres associated with each movie.
-
-userId_y: Identifier for users who have tagged movies.
-
-tag: Tags assigned by users to movies.
-
-timestamp_y: Timestamp when a user tagged a movie.
-
+This project showcases the implementation of a movie recommendation system using the MovieLens dataset. We explored various algorithms and found that the hybrid approach offers the best performance. This project is a practical guide for those interested in recommendation systems.
 
 DEPLOYMENT
 ========================
