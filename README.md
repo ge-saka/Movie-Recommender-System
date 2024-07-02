@@ -18,10 +18,15 @@ PHASE 4:GROUP 12 MEMBERS:
 =============
 
 Daniel Wahome.
+
 Purity Gitonga.
+
 Brian Kariithi.
+
 Caroline Gesaka.
-=============
+
+James Njoroge.
+
 
 Citation
 ========
