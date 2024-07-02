@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 from surprise import Dataset, Reader, SVD
 
-# Add an image at the top
-st.image("pulp.jpg", caption="Movie Recommender System", use_column_width=True)
+# Add an image at the top with smaller dimensions
+st.image("pulp.jpg", caption="Movie Recommender System", width=300)
 
 # Load your data
 links = pd.read_csv('./content/links.csv')
